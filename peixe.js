@@ -1,37 +1,38 @@
-var config = {
-        type: Phaser.AUTO,
-        height: 600,
-        width: 800, 
-
-        scene: {
-            preload: preload,
-            create: create,
-            update: update
-        }
+var config = { 
+    type: Phaser.AUTO,
+    width: 800,
+    height: 600,
+    
+    scene: {
+        preload: preload,
+        create: create,
+        update: update
+    }
 };
 
-var peixe
 var game = new Phaser.Game(config);
 
+var peixinho;
+
 function preload() {
-    this.load.image(`mar`, `assets/bg_azul-escuro.png`);
-    this.load.image(`logo`, assets/logo-inteli_azul.png);
-    this.load.image(`peixe`, àssets/peixes/tartaruga.png);
+    this.load.image('mar', 'assets/bg_azul-escuro.png');
+    
+    this.load.image(`logo`, `assets/logo-inteli_branco.png`);
 
+    this.load.image(`peixe`, `assets/peixes/tartaruga.png`);
 }
 
-function create() {
-    this.add.image(400, 300, `mar`);
-    this.add.image(400,300, `logo`).setScale(0.5)
+function create() {   this.add.image(400, 300, 'mar');
 
-    peixe = this.add.image(400,300, `peixe`)
+this.add.image(400, 525, `logo`).setScale(0.5);
 
-    peixe.setFlip(true, false)
+peixinho = this.add.image(400, 300, `peixe`)
+
+peixinho.setFlip(true, false);
 }
-
+ 
 function update() {
 
-    peixe.x = this.input.x
-    peixe = this.input.type
-    
-}
+    peixinho.x = this.input.x;
+    peixinho.y = this.input.y;
+ }
