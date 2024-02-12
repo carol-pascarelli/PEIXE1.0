@@ -20,6 +20,14 @@ function preload() {
     this.load.image(`logo`, `assets/logo-inteli_branco.png`);
 
     this.load.image(`peixe`, `assets/peixes/tartaruga.png`);
+
+    this.load.image(`alga`, `assets/algas-fundo.png`);
+
+    this.load.image(`concha`, `assets/conchas.png`);
+
+    this.load.image(`peixinhos-fundo`, `assets/peixinhos-fundo.png`);
+
+
 }
 
 function create() {   this.add.image(400, 300, 'mar');
@@ -29,6 +37,21 @@ this.add.image(400, 525, `logo`).setScale(0.5);
 peixinho = this.add.image(400, 300, `peixe`)
 
 peixinho.setFlip(true, false);
+
+this.add.image(120, 490, 'concha').setScale(0.5);
+
+this.add.image(680, 490, 'concha').setScale(0.5).setFlip(true);
+
+this.add.image(280, 520, 'alga').setScale(0.2);
+
+this.add.image(700, 200, 'peixinhos-fundo').setScale(0.4).setFlip(true);
+
+this.add.image(300, 120, 'peixinhos-fundo').setScale(0.4).setFlip(true);
+
+this.add.image(10, 260, 'peixinhos-fundo').setScale(0.4);
+
+this.add.image(500, 350, 'peixinhos-fundo').setScale(0.4);
+
 }
  
 function update() {
