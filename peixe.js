@@ -17,7 +17,9 @@ var peixinho;
 function preload() {
     this.load.image('mar', 'assets/bg_azul-escuro.png');
     
-    this.load.image(`logo`, `assets/logo-inteli_branco.png`);
+    this.load.image(`logoAzul`, `assets/logo-inteli_branco.png`);
+
+    this.load.image(`logoBranco`, `assets/logo-inteli_azul.png`);
 
     this.load.image(`peixe`, `assets/peixes/tartaruga.png`);
 
@@ -30,9 +32,15 @@ function preload() {
 
 }
 
-function create() {   this.add.image(400, 300, 'mar');
+function create(){   
 
-this.add.image(400, 525, `logo`).setScale(0.5);
+this.add.image(400, 300, 'mar');
+
+if (game.device.os.desktop) { 
+    this.add.image(400, 525, `logoBranco`).setScale(0.5);
+} else {
+    this.add.image(400, 525, `logoAzul`).setScale(0.5);
+}
 
 peixinho = this.add.image(400, 300, `peixe`)
 
